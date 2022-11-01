@@ -5,7 +5,7 @@
 
 import data_extract
 
-ins_set = data_extract.extract_data()
+ins_set = data_extract.extract_data_set()
 
 def print_hi(name):
     # Use a breakpoint in the code line below to debug your script.

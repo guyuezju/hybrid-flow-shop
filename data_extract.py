@@ -53,9 +53,9 @@ class Instance:
 
         # extract info from data in file
         # process time
-        for i in range(2, 2+self.job_num):
+        for j in range(self.stage_num):
             p_time = []
-            for j in range(self.stage_num):
+            for i in range(2, 2+self.job_num):
                 p_time.append(float(ins_data[i][2*j+1]))
             self.process_time.append(p_time)
 
@@ -80,7 +80,7 @@ class Instance:
 
 
 # extract ins data
-def extract_data():
+def extract_data_set():
     folder = "HFSDDW/smallCalibration/"
     file_name_path = folder + "InstanceName.txt"
     ins_names = extract_file_names(file_name_path)
@@ -101,8 +101,9 @@ def extract_data():
 
     return res
 
+
 if __name__ == "__main__":
-    ins_set = extract_data()
+    ins_set = extract_data_set()
 
 
 

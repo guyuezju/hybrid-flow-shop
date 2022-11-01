@@ -26,6 +26,42 @@ class ConstructHeuristic:
 
         self.sol.sequence = sorted(self.sol.sequence, key=lambda x: self.ins.tardiness_window[x] - process_time_sum[x])
 
+
+class ImproveHeuristics:
+    def __init__(self, sol):
+        self.ins = sol.ins
+        self.sol = sol
+
+    def VND(self):
+        pass
+
+    def limited_neighbors(self):
+        pass
+
+class IteratedGreedy:
+    def __init__(self, sol):
+        self.ins = sol.ins
+        self.sol = sol
+
+    def construction(self):
+        pass
+
+    def reconstruction(self):
+        pass
+
+
+class MainLoop:
+    def __init__(self, sol):
+        self.ins = sol.ins
+        self.sol = sol
+
+    def algorithm(self):
+        pass
+
+    def show_result(self):
+        pass
+
+
 if __name__ == "__main__":
     # test fam func
     ins = data_extract.Instance()
@@ -42,8 +78,18 @@ if __name__ == "__main__":
     sol = solution.Solution(ins)
     sol.sequence = [0, 1, 2, 3, 4]
 
-    algorithm1 = ConstructHeuristic(sol)
-    algorithm1.edd()
-    algorithm1.lsl()
-    algorithm1.osl()
+    algorithm = ConstructHeuristic(sol)
+    algorithm.edd()
+    algorithm.lsl()
+    algorithm.osl()
     print(sol.sequence)
+
+    # instance from file
+    ins_set = data_extract.extract_data_set()
+    ins0 = ins_set[0]
+    sol0 = solution.Solution(ins0)
+    algorithm0 = ConstructHeuristic(sol0)
+    algorithm0.edd()
+    sol0.fam()
+    print(sol0.sequence)
+

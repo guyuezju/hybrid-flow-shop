@@ -14,8 +14,8 @@ class Task:
 class Solution:
     def __init__(self, ins):
         self.ins = ins
-        self.sequence = []
         self.eval = 0.0
+        self.sequence = [i for i in range(ins.job_num)]
 
         self.tasks = []
         for i in range(ins.stage_num):
